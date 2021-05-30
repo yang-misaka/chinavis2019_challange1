@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a {
+  color: white;
+}
+a:hover,
+a:focus {
+  color: #42d0ed;
+}
+body {
+  position: relative;
+  height: 100vh;
+}
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  display: block;
+  font-weight: 200;
+  background-color: #c4cde6;
+  /*background: url(../pic/sidebar_bg.png) no-repeat center top;*/
+  background-size: cover;
+}
+.mask {
+  height: 100%;
+  overflow: hidden;
+  /*background:rgba(255,255,255,0.5);*/
+}
+.sidebar .logo {
+  padding: 30px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+.sidebar .logo p {
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.sidebar .nav {
+  margin-top: 20px;
+}
+.sidebar .img1 {
+  background: url(../pic/icon1.png) no-repeat center top;
+  background-size: cover;
+}
+.sidebar .img2 {
+  background: url(../pic/icon2.png) no-repeat center top;
+  background-size: cover;
+}
+.sidebar .nav li > a {
+  display: block;
+  color: #ffffff;
+  margin: 20px 20px;
+  opacity: 0.86;
+  border-radius: 4px;
+}
+.sidebar .nav li:hover > a {
+  background: rgba(255, 255, 255, 0.13);
+  opacity: 1;
+}
+.sidebar .nav p {
+  display: inline-block;
+  margin-left: 5px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+.sidebar .nav i {
+  overflow: hidden;
+  font-size: 28px;
+  float: left;
+  line-height: 30px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  height: 100%;
+  background-color: #f7f7f8;
+}
+#headline {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+}
+#headline p {
+  float: left;
+  display: inline-block;
+  color: #777;
+  line-height: 60px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+#headline .choice {
+  display: inline-block;
+  float: right;
+}
+#headline .choice .select {
+  display: inline-block;
+  width: 80px;
+  position: relative;
+  margin: 15px 5px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #aaa;
+  text-shadow: none;
+  border-radius: 4px;
+  transition: box-shadow 0.25s ease;
+  z-index: 2;
+}
+
+.myselect {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 3px 12px;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top-color: #ccc;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+  z-index: -2;
+}
+
+.myselect:focus {
+  outline: none;
+}
+.buttons {
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+  text-align: center;
+}
+.buttons .btn {
+  display: inline-block;
+  text-align: center;
+  width: 45px;
+  height: 25px;
+  outline: none;
+  margin: 0 10px;
+}
+
+#box {
+  flex:1;
+  display: flex;
+  width: 100%;
+}
+#leftbox{
+  width: 375px;
+  height:100%;
+  margin-left: 1%;
+
+}
+#heatmap3D_f1 {
+  position: relative;
+  background-color: #fff;
+  top: 2%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 44%;
+}
+#heatmap3D_f2 {
+  position: relative;
+  background-color: #fff;
+  top: 3%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 44%;
+}
+#main_box {
+  /*float: right;*/
+  display: inline-block;
+ /* position: relative;
+  margin-right: 10px;*/
+  background-color: #fff;
+  /*top: 2%;
+  bottom: 0;*/
+  width: 540px;
+  height: 90%;
+  margin: 1% 1%;
+}
+#mainMap {
+  height: 100%;
+  width: 100%;
+}
+
+#rightbox{
+  margin-right: 1%;
+  width: 375px;
+  height: 100%;
+}
+#lineGraph {
+  width: 100%;
+  height: 100%;
+}
+.lineDiv {
+  position: relative;
+  float: right;
+  top: 2%;
+  bottom: 0;
+  background-color: #fff;
+  margin-right: 1%;
+  width: 375px;
+  height: 44%;
+}
+#sum {
+  position: relative;
+  background-color: #fff;
+  float: right;
+  top: 5%;
+  bottom: 0;
+  width: 375px;
+  height: 44%;
+  background: url("../pic/sum.png") no-repeat center top;
+  background-size: contain;
+
+}

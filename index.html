@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Project </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="sidebar">
+		<div class = "mask">
+			<div class="logo">
+			    <p>My Project</p>
+			</div>
+			<ul class="nav">
+				<li class="active">
+					<a href="index.html">
+						<i class="img1"></i>
+						<p>会场安排可视化</p>
+					</a>
+				</li>
+				<li>
+					<a href="people.html">
+						<i class="img2"></i>
+						<p>参会人员可视化</p>
+					</a>
+			</ul>
+			</div>
+		</div>
+    </div>
+    <div class="main">
+    	<div id='headline'>
+    		<p>CICSC会场信息可视化</p>
+    		<div class = 'choice'>
+    			<div class = 'select'>
+    				<select class="myselect" id="time">
+    				</select>
+    			</div>
+    			<div class = 'select'>
+    				<select class="myselect" id="day_selection">
+    					<option value="0" selected = "selected">day1</option>
+    					<option value="1">day2</option>
+    					<option value="2">day3</option>
+    				</select>
+    			</div>
+   
+    			<div class = 'buttons'>
+    				<button class = 'btn' id = 'start'>start</button>
+    				<button class = 'btn' id = 'stop'>stop</button>
+    			</div>
+    		</div>
+    	</div>
+    	<div id = box>
+			<div id = "leftbox">
+                <div id= "heatmap3D_f1"></div>
+                <div id= "heatmap3D_f2"></div>   
+            </div>
+    		<div id='main_box'>
+    			<div id="mainMap"></div>
+    		</div>
+            
+            <div id = "rightbox">
+                <div class="lineDiv">
+                    <div id="lineGraph" style="zoom:28%"></div>
+                </div>
+                <div id= "sum"></div>    
+            </div>
+    	</div>
+    </div>
+
+</body>
+<script src="js/d3.v4.min.js"></script>
+<script src="js/d3-scale-chromatic.v1.min.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/echarts-gl.js"></script>
+<script src="js/mainMap.js"></script>
+<script src="js/heatmap3D_f1.js"></script>
+<script src="js/heatmap3D_f2.js"></script>
+<script src="js/lineGraph.js"></script>
+<script>
+	d3.select("#day_selection").on("change", function () {
+            var curday = document.getElementById('day_selection').value;
+            
+			
+			document.getElementById('mainMap').innerHTML ='';
+			document.getElementById('time').innerHTML ='';
+            document.getElementById('lineGraph').innerHTML ='';
+			mainMap(curday);
+			heatmap3D_f1(curday);
+			heatmap3D_f2(curday);
+            lineGraph(curday);
+        });
+
+	window.onload=function(){
+		mainMap(document.getElementById('day_selection').value);
+		heatmap3D_f1(document.getElementById('day_selection').value);
+		heatmap3D_f2(document.getElementById('day_selection').value);
+        lineGraph(document.getElementById('day_selection').value);
+
+		
+	}
+
+</script>
+
+</html>

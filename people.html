@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Project </title>
+	<link rel="stylesheet" href="css/style_people.css">
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="mask">
+			<div class="logo">
+				<p>My Project</p>
+			</div>
+			<ul class="nav">
+				<li class="active">
+					<a href="index.html">
+						<i class="img1"></i>
+						<p>会场安排可视化</p>
+					</a>
+				</li>
+				<li>
+					<a href="people.html">
+						<i class="img2"></i>
+						<p>参会人员可视化</p>
+					</a>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div class="main">
+		<div id='headline'>
+			<p>CICSC参会人员信息可视化</p>
+			<div class='choice'>
+				<div class='select'>
+					<select class="myselect" id="day_selection">
+						<option value="0" selected="selected">day1</option>
+						<option value="1">day2</option>
+						<option value="2">day3</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div id='main_box'>
+			<div id='box_left'>
+				<div id='radar_1'></div>
+				<div id='radar_2'></div>
+			</div>
+			<div id='box_right'>
+
+				<div id="pie"></div>
+				<div id="tooltip"></div>
+				<div id="list"></div>
+				<div id="listSearch">
+					<input type="button" value="lastpage" id="lastpage">
+					<input type="button" value="nextpage" id="nextpage">
+					<input type="text" id="page">
+					<div id="pagenum"></div>
+					<input type="button" value="turnto" id="turn">
+					<input type="text" id="id_search">
+					<input type="button" value="search" id="search">
+				</div>
+			</div>
+
+
+			<div id="black_overlay"></div>
+		</div>
+		<div id='bottomline'></div>
+	</div>
+
+</body>
+<script src="js/d3.v4.min.js"></script>
+<script src="js/d3-scale-chromatic.v1.min.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/echarts-gl.js"></script>
+<script src="js/radar_1.js"></script>
+<script src="js/radar_2.js"></script>
+
+<script src="js/lineGraph1.js"></script>
+<script src="js/pie.js"></script>
+<script>
+	var dayX_mainMaps = ['data/day1_mainMap.csv', 'data/day2_mainMap.csv', 'data/day3_mainMap.csv'];
+	var dayX_areaDatas = ['data/day1_areaData.csv', 'data/day2_areaData.csv', 'data/day3_areaData.csv'];
+	var dayX_results = ['data/day1_result1.csv', 'data/day2_result1.csv', 'data/day3_result1.csv'];
+	var dayXs = ['data/day1.csv', 'data/day2.csv', 'data/day3.csv'];
+
+	d3.select("#day_selection").on("change", function () {
+		var curDay = document.getElementById('day_selection').value;
+		document.getElementById('pie').innerHTML = '';
+		pie(curDay);
+		radar_1(curDay);
+		radar_2(curDay);
+
+
+	});
+
+	window.onload = function () {
+		pie(document.getElementById('day_selection').value);
+		radar_1(document.getElementById('day_selection').value);
+		radar_2(document.getElementById('day_selection').value);
+
+
+	}
+
+</script>
+
+</html>
